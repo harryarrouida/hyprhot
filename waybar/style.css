@@ -1,0 +1,98 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Hack Nerd Font";
+    font-size: 17px;
+    font-weight: bold;
+}
+
+window#waybar {
+    background-color: @background;
+    color: @foreground;
+    border-bottom: 2px solid @color1;
+}
+
+/* --- Common Module Styling --- */
+#workspaces,
+#cpu,
+#memory,
+#temperature,
+#clock,
+#battery,
+#pulseaudio,
+#network,
+#bluetooth,
+#custom-shutdown,
+#custom-sunset,
+#custom-arch {
+    padding: 0px 10px;
+    margin: 5px 5px;
+    background-color: transparent;
+}
+
+/* --- Indicative Border Colors --- */
+#workspaces { border-bottom: 3px solid @color1; }
+#cpu { border-bottom: 3px solid @color1; }
+#memory { border-bottom: 3px solid @color1; }
+#temperature { border-bottom: 3px solid @color1; }
+/*#clock { border-bottom: 3px solid @color1; }*/
+#bluetooth { border-bottom: 3px solid @color1; }
+#pulseaudio { border-bottom: 3px solid @color1; }
+#network { border-bottom: 3px solid @color1; }
+#battery { border-bottom: 3px solid @color1; }
+#custom-arch { border-bottom: 3px solid @color1; }
+#custom-sunset { border-bottom: 3px solid @color1; }
+#custom-shutdown { border-bottom: 3px solid @color1; }
+
+/* --- Workspaces --- */
+#workspaces button {
+    padding: 0 1px;
+    color: @color7;
+    transition: all 0.2s ease;
+}
+
+#workspaces button.active {
+    color: @color2;
+    font-size: 22px;
+}
+
+#workspaces button:hover {
+    color: @color1;
+}
+
+/* --- Specific States --- */
+#battery.charging { color: #89b4fa; }
+#battery.warning:not(.charging) { color: #f9e2af; border-bottom-color: #f9e2af; }
+#battery.critical:not(.charging) { color: #f38ba8; border-bottom-color: #f38ba8; }
+
+#network.disconnected { color: #f38ba8; border-bottom-color: #f38ba8; }
+
+#pulseaudio.muted { color: #f38ba8; border-bottom-color: #f38ba8; }
+
+#window {
+    color: @color7;
+    padding: 0 18px;
+    font-size: 14px;
+}
+
+#custom-arch {
+    color: @color7;
+    font-size: 22px;
+}
+
+#custom-shutdown {
+    color: @color7;
+    font-size: 22px;
+}
+
+#custom-sunset {
+    color: @color7;
+    font-size: 22px;
+}
+
+#custom-sunset.activated {
+    color: #ffb86c;
+}
+

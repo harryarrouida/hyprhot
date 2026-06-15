@@ -1,0 +1,112 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    background-colour: @background;
+    foreground-colour: @foreground;
+    alternate-background: @background;
+    alternate-foreground: @foreground;
+    selected-background: @selected-normal-background;
+    selected-foreground: @selected-normal-foreground;
+
+    font: "Hack Nerd Font 12";
+}
+
+configuration {
+    modi: "dmenu";
+    show-icons: true;
+    icon-theme: "Papirus";
+    hide-scrollbar: true;
+    bw: 0;
+    fullscreen: false;
+    terminal: "kitty";
+    cycle: true;
+}
+
+window {
+    background-color: @background;
+    border-radius: 10px;
+    border: 1px;
+    width: 1400px;
+    height: 600px;
+    location: center;
+    anchor: center;
+    enabled: true;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+    spacing: 15px;
+    padding: 15px;
+    background-color: transparent;
+}
+
+inputbar {
+    background-color: transparent;
+    text-color: @foreground;
+    border-radius: 6px;
+    padding: 5px;
+    children: [ "prompt", "entry" ];
+    enabled: true;
+}
+
+prompt {
+    enabled: true;
+    padding: 5px;
+    background-color: transparent;
+    text-color: @foreground;
+}
+
+entry {
+    background-color: transparent;
+    text-color: @foreground;
+    placeholder: "Search...";
+    placeholder-color: @foreground;
+    expand: true;
+    padding: 5px;
+    enabled: true;
+}
+
+listview {
+    background-color: transparent;
+    columns: 6;
+    lines: 2;
+    spacing: 15px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    enabled: true;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground;
+    orientation: vertical;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+element-icon {
+    background-color: inherit;
+    text-color: inherit;
+    size: 180px;
+    padding: 0px;
+    cursor: pointer;
+    horizontal-align: 0.5;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    expand: true;
+    horizontal-align: 0.5;
+    vertical-align: 0.5;
+    margin: 5px 0 0 0;
+    cursor: pointer;
+}
+
+element selected {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+    border: 0px;
+    border-radius: 10px;
+}

@@ -1,0 +1,88 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 48,
+    "margin-top": 0,
+    "margin-bottom": 0,
+    "spacing": 5,
+    "modules-left": ["custom/arch", "hyprland/workspaces", "cpu", "memory", "temperature", "hyprland/window"],
+    "modules-center": ["clock#time"],
+    "modules-right": ["bluetooth", "pulseaudio", "network", "battery", "custom/shutdown"],
+
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "format": "{icon}",
+        "format-icons": {
+            "active": "ᗧ",
+            "default": "●"
+        },
+        "persistent-workspaces": {
+             "*": 5
+        }
+    },
+    "hyprland/window": {
+        "format": "{}",
+        "max-length": 20,
+        "separate-outputs": true
+    },
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": false,
+        "on-click": "rofi -show drun"
+    },
+    "memory": {
+        "interval": 5,
+        "format": "󰓅 {used:0.1f}G"
+    },
+    "cpu": {
+        "interval": 5,
+        "format": "󰍛 {usage}%"
+    },
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["󰈸"],
+        "interval": 5
+    },
+    "clock#time": {
+        "format": "󱑊 {:%I:%M %p  󰃭 %d %b}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "bluetooth": {
+        "format": "󰂯 {status}",
+        "format-on": "󰂯 {status}",
+        "format-off": "󰂲 Off",
+        "format-connected": "󰂱 {device_alias}",
+        "on-click": "kitty -e bluetuith"
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "󰸈 Muted",
+        "format-icons": {
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀 Wired",
+        "format-disconnected": "󰤭 Offline",
+        "on-click": "kitty -e nmtui"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "󰂄 {capacity}%",
+        "format-plugged": "󰚥 {capacity}%",
+        "format-full": "󰁹 {capacity}%",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂"]
+    },
+    "custom/shutdown": {
+        "format": "󰐥",
+        "on-click": "$HOME/.config/rofi/powermenu/powermenu.sh",
+        "tooltip": false
+    }
+}

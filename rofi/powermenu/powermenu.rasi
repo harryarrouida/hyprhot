@@ -1,0 +1,81 @@
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    background-colour: @background;
+    foreground-colour: @foreground;
+    alternate-background: @background;
+    alternate-foreground: @foreground;
+    selected-background: @selected-normal-background;
+    selected-foreground: @selected-normal-foreground;
+
+    font: "Hack Nerd Font 14";
+}
+
+configuration {
+    modi: "drun,run";
+    show-icons: false;
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+
+    hide-scrollbar: true;
+    bw: 0;
+    fullscreen: false;
+    terminal: "kitty";
+    cycle: true;
+    line-margin: 2;
+    line-padding: 2;
+    fixed-num-lines: true;
+}
+
+window {
+    background-color: @background;
+    border-radius: 10px;
+    border: 1px;
+    border-color: @forground;
+    width: 480px;
+    location: center;
+    anchor: center;
+    enabled: true;
+    margin: 0px;
+    padding: 0px;
+}
+
+mainbox {
+    children: [ "listview" ];
+    spacing: 10px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+listview {
+    background-color: transparent;
+    columns: 1;
+    lines: 5;
+    spacing: 5px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+    enabled: true;
+    padding: 0px;
+}
+
+element {
+    background-color: transparent;
+    text-color: @foreground;
+    orientation: horizontal;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+element-text {
+    background-color: inherit;
+    text-color: inherit;
+    expand: true;
+    vertical-align: 0.5;
+    horizontal-align: 0.5;
+}
+
+element selected {
+    background-color: @selected-normal-background;
+    text-color: @selected-normal-foreground;
+}

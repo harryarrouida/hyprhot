@@ -1,0 +1,98 @@
+
+@import "~/.cache/wal/colors-rofi-dark.rasi"
+
+* {
+    font: "Hack Nerd Font 14";
+}
+
+configuration {
+    modi: "drun,run";
+    show-icons: true;
+    display-drun: "Apps";
+    drun-display-format: "{name}";
+    icon-theme: "Papirus";
+
+    bw: 0;
+    fullscreen: false;
+    terminal: "kitty";
+    cycle: true;
+    line-margin: 2;
+    line-padding: 2;
+    fixed-num-lines: true;
+}
+
+window {
+    background-color: @background;
+    border-radius: 10px;
+    border: 1px;
+    width: 48%;
+    height: 60%;
+    x-offset: -50%;
+    y-offset: -50%;
+    enabled: true;
+    margin: 0px;
+    padding: 0px;
+}
+
+mainbox {
+    children: [ "inputbar", "listview" ];
+    spacing: 12px;
+    padding: 12px;
+}
+
+inputbar {
+    background-color: @background-alt;
+    text-color: @foreground;
+    border-radius: 6px;
+    padding: 6px;
+    children: [ "prompt", "entry" ];
+}
+
+prompt {
+    enabled: true;
+    padding: 6px;
+    background-color: @background-alt;
+    text-color: @foreground;
+}
+
+entry {
+    background-color: @background-alt;
+    text-color: @foreground;
+    placeholder: "Search...";
+    placeholder-color: @foreground;
+    expand: true;
+    padding: 6px;
+}
+
+listview {
+    background-color: @background;
+    columns: 1;
+    spacing: 6px;
+    cycle: true;
+    dynamic: true;
+    layout: vertical;
+}
+
+element {
+    background-color: @background;
+    text-color: @foreground;
+    orientation: horizontal;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+element-icon {
+    size: 32px;
+    padding: 0 12px;
+}
+
+element-text {
+    expand: true;
+    vertical-align: 0.5;
+    margin: 0 12px;
+    text-color: @foreground;
+}
+
+element selected {
+    background-color: transparent;
+}
